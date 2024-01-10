@@ -5,3 +5,49 @@
 * {
   box-sizing: border-box;
 }
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". header header header ."
+    ". main main main ."
+    ". footer footer footer .";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.c-pomodoro--timer {
+  border: 5px solid;
+  border-color: rgb(var(--theme500));
+  border-radius: 50%;
+}
+
+.c-pomodoro--cycles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.c-pomodoro--cycles > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(var(--theme500), 0.5);
+}
+
+.c-pomodoro--cycles > span.completed {
+  background-color: rgb(var(--theme500));
+}
